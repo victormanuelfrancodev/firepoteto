@@ -2,6 +2,7 @@ import 'package:firepoteto/components/flame_charapter.dart';
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flame/effects.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import '../poteto_game.dart';
 import '../poteto_world.dart';
@@ -69,13 +70,16 @@ class CaptureCharapter extends SpriteComponent with CollisionCallbacks, HasGameR
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     if(other is FlameCharapter){
       if(capture == Capture.flame){
+        FlameAudio.play('boing.mp3',volume: 1);
         other.addFire();
         (gameRef.world as PotetoWorld).fireBar.updateHealth((gameRef.world as PotetoWorld).fireBar.currentHealth + 5);
       }else if(capture == Capture.ice){
+        FlameAudio.play('boing.mp3',volume: 1);
         other.addVelocity();
         (gameRef.world as PotetoWorld).iceBar.updateHealth((gameRef.world as PotetoWorld).iceBar.currentHealth + 5);
       }else if(capture == Capture.enemy){
-        speed += 0.5;
+        FlameAudio.play('bad.mp3',volume: 1);
+        speed += 1;
         (gameRef.world as PotetoWorld).lifeBar.updateHealth((gameRef.world as PotetoWorld).lifeBar.currentHealth - 10);
       }
       removeFromParent();

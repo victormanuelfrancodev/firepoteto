@@ -3,6 +3,7 @@ import 'package:firepoteto/components/flame_charapter.dart';
 import 'package:firepoteto/poteto_game.dart';
 import 'package:flame/components.dart';
 import 'package:flame/palette.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 import 'components/capture_charapter.dart';
 import 'components/health_bar.dart';
@@ -18,7 +19,6 @@ class PotetoWorld extends World with HasGameRef<PotetoGame> {
     ..strokeWidth = 5.0
     ..color = Colors.blueAccent.withOpacity(0.5);
 
-
   late Timer _timer;
   final double timeInAppearEachObstacle = 2;
   late final JoystickComponent joystick;
@@ -28,8 +28,6 @@ class PotetoWorld extends World with HasGameRef<PotetoGame> {
   late HealthBar iceBar;
   late HealthBar lifeBar;
 
-
-
   void appearOperation() async {
     add(createRandomCaptureCharapter(cameraSize));
   }
@@ -37,7 +35,7 @@ class PotetoWorld extends World with HasGameRef<PotetoGame> {
   @override
   void onLoad() async {
     cameraSize = gameRef.size;
-
+    FlameAudio.loop('backgroundsound.mp3',volume:1);
     final sprite = await Sprite.load('background.png');
     final component = SpriteComponent(sprite: sprite, size: cameraSize);
     add(component);

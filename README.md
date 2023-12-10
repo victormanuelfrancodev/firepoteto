@@ -1,16 +1,23 @@
-# firepoteto
+# Game Instructions
 
-Flame Jam 2023 FirePoteto
+Welcome to our exciting game where you control a little flame character with a joystick! Your goal is to catch falling ice cubes and small flames. Here's how to play:
 
-## Getting Started
+## How to Play
 
-This project is a starting point for a Flutter application.
+- **Move the Flame**: Use the joystick to move your flame character across the screen.
 
-A few resources to get you started if this is your first Flutter project:
+- **Catch Ice and Fire**:
+    - Ice Cubes: Capture these to fill your ice bar. But be careful, each ice cube you catch will make your flame character slide faster (increase in speed).
+    - Little Flames: Catching these will help fill your fire bar. Each flame caught will make your flame character grow larger.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Watch Out for the Alien-Like Object**: If you touch this, the ice cubes and flames will start falling faster.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Winning the Game**: You win if you can fill both the ice and fire bars completely.
+
+## Tips and Tricks
+
+- **Balance is Key**: You need to strike a balance between catching ice and flames to manage your size and speed effectively.
+
+- **Stay Alert**: The alien-like object can significantly increase the game's difficulty, so be prepared to move quickly.
+
+Good luck, and have fun!

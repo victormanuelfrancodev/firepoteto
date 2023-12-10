@@ -14,8 +14,8 @@ class FlameCharapter extends SpriteComponent with CollisionCallbacks,HasGameRef<
 
   final JoystickComponent joystick;
   late  FlameDirection flameDirection = FlameDirection.right;
-  late double grow = 20;
-  late double velocity = 8;
+  late double grow = 10;
+  late double velocity = 5;
 
   @override
   onLoad() async{
@@ -31,7 +31,7 @@ class FlameCharapter extends SpriteComponent with CollisionCallbacks,HasGameRef<
   }
 
   addVelocity(){
-    velocity += 1;
+    velocity += 2;
   }
 
   @override
